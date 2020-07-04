@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Best Features</title>
+
+    <!-- BOOTSTRAP IMPORTS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- MENU -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">News Category</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/trainingset">Training Set</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/process">Process</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Best Features</a>
+
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/best/3/occurrences">Occurrences</a>
+                        <a class="dropdown-item" href="/best/3/binary">Binary</a>
+                        <a class="dropdown-item" href="/best/3/tf">TF</a>
+                        <a class="dropdown-item" href="/best/3/tfidf">TFIDF</a>
+                    </div>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/cosineSimilarity">Cosine Similarity</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/classify">Bayes Classification</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/matrix">Matrix</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <span id='dataSet' hidden>
+        <%= JSON.stringify(data); %>
+    </span>
+
+    <span id='dataStatistics' hidden>
+        <%= JSON.stringify(dataStatistics); %>
+    </span>
+
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                        data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Chart for Unigram - Politics
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <canvas id="unigramPoliticsChart" width="100"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Chart for Bigram - Politics
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <canvas id="bigramPoliticsChart" width="100"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Chart for Unigram - Wellness
+                    </button>
+                </h2>
+            </div>
+            
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <canvas id="unigramWellnessChart" width="100"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Chart for Bigram - Wellness
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                    <canvas id="bigramWellnessChart" width="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <!-- CHARTS TO REPRESENT BEST FEATURES -->
+    <script>
+        let dataSet = JSON.parse($('#dataStatistics').text());
+        let dataSetToRender = JSON.parse(dataSet);
+
+        var unigramPoliticsChart = document.getElementById('unigramPoliticsChart').getContext('2d');
+        var myChart = new Chart(unigramPoliticsChart, {
+            type: 'bar',
+            data: dataSetToRender.unigramPolitics,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+
+        var bigramPoliticsChart = document.getElementById('bigramPoliticsChart').getContext('2d');
+        var myChart = new Chart(bigramPoliticsChart, {
+            type: 'bar',
+            data: dataSetToRender.bigramPolitics,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var unigramWellnessChart = document.getElementById('unigramWellnessChart').getContext('2d');
+        var myChart = new Chart(unigramWellnessChart, {
+            type: 'bar',
+            data: dataSetToRender.unigramWellness,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var bigramWellnessChart = document.getElementById('bigramWellnessChart').getContext('2d');
+        var myChart = new Chart(bigramWellnessChart, {
+            type: 'bar',
+            data: dataSetToRender.bigramWellness,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
